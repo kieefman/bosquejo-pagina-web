@@ -1,0 +1,33 @@
+---
+---
+<div class="tab-panel" id="panel-audio" role="tabpanel">
+    <div class="audio-section">
+        <div class="controls">
+            <button id="play-pause" disabled>▶</button>
+            <span id="time-display">00:00 / 00:00</span>
+        </div>
+        <!-- Control de volumen -->
+        <div class="volume-row">
+            <span class="volume-icon">🔊</span>
+            <input
+                type="range"
+                id="volume-slider"
+                min="0"
+                max="100"
+                value="80"
+                aria-label="Volumen"
+            />
+            <span id="volume-label" class="volume-label">80%</span>
+        </div>
+        <!-- Waveform oculto: WaveSurfer lo necesita para funcionar -->
+        <div id="waveform" aria-hidden="true"></div>
+        <div>
+            <div class="audio-label">
+                Espectrograma (0 – 4 kHz)
+            </div>
+            <div id="spectrogram" style="position:relative;">
+                <div id="spec-cursor"></div>
+            </div>
+        </div>
+    </div>
+</div>

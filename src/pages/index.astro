@@ -1,0 +1,47 @@
+---
+// src/pages/index.astro
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Map from "../components/Map.astro";
+import Panel from "../components/Panel.astro";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard Acústico – Humedal Angachilla</title>
+        <meta
+            name="description"
+            content="Dashboard de ecoacústica para el humedal Angachilla: mapa interactivo, métricas acústicas y visualización de audio."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+        />
+    </head>
+    <body>
+        <Header />
+
+        <!-- ===== MAIN ===== -->
+        <main class="layout-main">
+            <Map />
+            <Panel />
+        </main>
+
+        <script>
+            import "../scripts/map.ts";
+            import "../scripts/panel.ts";
+            import "../scripts/audio.ts";
+        </script>
+    </body>
+</html>

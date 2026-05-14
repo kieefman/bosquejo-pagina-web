@@ -1,0 +1,42 @@
+---
+import MetricsTab from "./MetricsTab.astro";
+import AudioTab from "./AudioTab.astro";
+---
+<aside id="info-panel" aria-label="Información de estación">
+    <!-- Cabecera -->
+    <div class="panel-header">
+        <div class="panel-title-block">
+            <h2 id="station-name">Estación</h2>
+            <p id="station-coords"></p>
+        </div>
+        <button id="close-panel" aria-label="Cerrar panel">✕</button>
+    </div>
+
+    <!-- Tabs header -->
+    <div class="tabs-header" role="tablist">
+        <button
+            class="tab-btn active"
+            role="tab"
+            data-tab="metrics"
+            aria-selected="true"
+            id="tab-metrics"
+        >
+            📊 Métricas
+        </button>
+        <button
+            class="tab-btn"
+            role="tab"
+            data-tab="audio"
+            aria-selected="false"
+            id="tab-audio"
+        >
+            🎧 Audio
+        </button>
+    </div>
+
+    <!-- Tabs body (scrollable) -->
+    <div class="tabs-body">
+        <MetricsTab />
+        <AudioTab />
+    </div>
+</aside>

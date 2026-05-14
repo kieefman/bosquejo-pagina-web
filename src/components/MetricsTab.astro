@@ -1,0 +1,140 @@
+---
+---
+
+<div class="tab-panel active" id="panel-metrics" role="tabpanel">
+    <!-- LAeq -->
+    <div class="metric-card" id="card-laeq">
+        <div class="metric-icon" id="icon-laeq">📢</div>
+        <div class="metric-body">
+            <div class="metric-row">
+                <div class="flex items-center gap-1">
+                    <span class="metric-name">LAeq</span>
+                    <div class="tooltip-wrap">
+                        <span class="tooltip-trigger">i</span>
+                        <div class="tooltip-box">
+                            <strong>Nivel Equivalente Ponderado A</strong><br />
+                            Promedio energético del ruido percibido por el oído humano.
+                            &lt;55 dBA es aceptable para zonas de naturaleza. La
+                            OMS recomienda &lt;53 dBA exterior diurno.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="metric-value" id="val-laeq">--</span>
+                    <span class="metric-unit">dBA</span>
+                </div>
+            </div>
+            <div class="metric-bottom">
+                <span class="metric-desc" id="desc-laeq">—</span>
+                <span class="status-badge" id="badge-laeq">—</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LeqZ -->
+    <div class="metric-card" id="card-leqz">
+        <div class="metric-icon" id="icon-leqz">📡</div>
+        <div class="metric-body">
+            <div class="metric-row">
+                <div class="flex items-center gap-1">
+                    <span class="metric-name">LZeq</span>
+                    <div class="tooltip-wrap">
+                        <span class="tooltip-trigger">i</span>
+                        <div class="tooltip-box">
+                            <strong
+                                >Nivel Equivalente Ponderado Z (lineal)</strong
+                            ><br />
+                            Captura todo el espectro sin ponderación auditiva. Útil
+                            para comparar con el LAeq: una diferencia alta entre
+                            ambos indica presencia de frecuencias muy bajas o muy
+                            altas.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="metric-value" id="val-leqz">--</span>
+                    <span class="metric-unit">dBZ</span>
+                </div>
+            </div>
+            <div class="metric-bottom">
+                <span class="metric-desc" id="desc-leqz">—</span>
+                <span class="status-badge" id="badge-leqz">—</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NDSI -->
+    <div class="metric-card" id="card-ndsi">
+        <div class="metric-icon" id="icon-ndsi">🌿</div>
+        <div class="metric-body">
+            <div class="metric-row">
+                <div class="flex items-center gap-1">
+                    <span class="metric-name">NDSI</span>
+                    <div class="tooltip-wrap">
+                        <span class="tooltip-trigger">i</span>
+                        <div class="tooltip-box">
+                            <strong>Índice de Paisaje Sonoro Natural</strong><br
+                            />
+                            Ratio entre sonido biofónico (1–2 kHz) y tecnofónico
+                            (2–8 kHz). Va de −1 a +1. Valores cercanos a +1 indican
+                            dominancia biológica. Valores negativos indican dominancia
+                            de ruido humano.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="metric-value" id="val-ndsi">--</span>
+                    <span class="metric-unit"></span>
+                </div>
+            </div>
+            <div class="metric-bottom">
+                <span class="metric-desc" id="desc-ndsi">—</span>
+                <span class="status-badge" id="badge-ndsi">—</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- L10 / L90 row -->
+    <div class="flex gap-2 mt-1">
+        <div
+            class="metric-card flex-1"
+            style="flex-direction:column;gap:0.25rem;padding:0.75rem 1rem;"
+        >
+            <span class="metric-name flex items-center gap-1">
+                L10
+                <div class="tooltip-wrap">
+                    <span class="tooltip-trigger">i</span>
+                    <div class="tooltip-box">
+                        <strong>Percentil L10</strong><br />
+                        Nivel de ruido superado el 10% del tiempo. Representa los
+                        picos de ruido del ambiente.
+                    </div>
+                </div>
+            </span>
+            <div>
+                <span class="metric-value text-base" id="val-l10">--</span>
+                <span class="metric-unit">dB</span>
+            </div>
+        </div>
+        <div
+            class="metric-card flex-1"
+            style="flex-direction:column;gap:0.25rem;padding:0.75rem 1rem;"
+        >
+            <span class="metric-name flex items-center gap-1">
+                L90
+                <div class="tooltip-wrap">
+                    <span class="tooltip-trigger">i</span>
+                    <div class="tooltip-box">
+                        <strong>Percentil L90</strong><br />
+                        Nivel de ruido de fondo superado el 90% del tiempo. Representa
+                        el ruido ambiental base del lugar.
+                    </div>
+                </div>
+            </span>
+            <div>
+                <span class="metric-value text-base" id="val-l90">--</span>
+                <span class="metric-unit">dB</span>
+            </div>
+        </div>
+    </div>
+</div>
