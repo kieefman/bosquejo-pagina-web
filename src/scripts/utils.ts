@@ -27,9 +27,9 @@ export const classify = {
         return { status: "bad", label: "Crítico", desc: "Nivel de ruido elevado" };
     },
     ndsi(v: number): { status: Status; label: string; desc: string } {
-        if (v >= 0.5)  return { status: "good", label: "Natural",   desc: "Dominancia biofónica" };
-        if (v >= 0)    return { status: "mod",  label: "Mixto",     desc: "Balance bio/tecnofónico" };
-        return              { status: "bad",  label: "Antrópico", desc: "Dominancia tecnofónica" };
+        if (v >= 0.5) return { status: "good", label: "Natural", desc: "Dominancia biofónica" };
+        if (v >= 0) return { status: "mod", label: "Mixto", desc: "Balance bio/antropofónico" };
+        return { status: "bad", label: "Antropofónico", desc: "Dominancia antropofónica" };
     },
 };
 

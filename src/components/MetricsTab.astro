@@ -15,7 +15,10 @@
                             <strong>Nivel Equivalente Ponderado A</strong><br />
                             Promedio energético del ruido percibido por el oído humano.
                             &lt;55 dBA es aceptable para zonas de naturaleza. La
-                            OMS recomienda &lt;53 dBA exterior diurno.
+                            OMS recomienda &lt;53 dBA exterior diurno. <cite
+                                >(OMS (2018). Environmental Noise Guidelines for
+                                the European Region.)</cite
+                            >
                         </div>
                     </div>
                 </div>
@@ -75,10 +78,10 @@
                         <div class="tooltip-box">
                             <strong>Índice de Paisaje Sonoro Natural</strong><br
                             />
-                            Ratio entre sonido biofónico (1–2 kHz) y tecnofónico
-                            (2–8 kHz). Va de −1 a +1. Valores cercanos a +1 indican
+                            Ratio entre sonido biofónico (1-2 kHz) y antropofónico
+                            (2-8 kHz). Va de -1 a +1. Valores cercanos a +1 indican
                             dominancia biológica. Valores negativos indican dominancia
-                            de ruido humano.
+                            de ruido antropofónico.
                         </div>
                     </div>
                 </div>
@@ -90,6 +93,37 @@
             <div class="metric-bottom">
                 <span class="metric-desc" id="desc-ndsi">—</span>
                 <span class="status-badge" id="badge-ndsi">—</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACI -->
+    <div class="metric-card" id="card-aci">
+        <div class="metric-icon" id="icon-aci">🌿</div>
+        <div class="metric-body">
+            <div class="metric-row">
+                <div class="flex items-center gap-1">
+                    <span class="metric-name">ACI</span>
+                    <div class="tooltip-wrap">
+                        <span class="tooltip-trigger">i</span>
+                        <div class="tooltip-box">
+                            <strong>Índice de Continuidad Acústica</strong><br
+                            />
+                            Mide la variabilidad de la señal de audio en bandas de
+                            frecuencia alta. Indica la riqueza del paisaje sonoro:
+                            valores más altos sugieren mayor diversidad de sonidos
+                            (insectos, aves, agua).
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="metric-value" id="val-aci">WIP</span>
+                    <span class="metric-unit"></span>
+                </div>
+            </div>
+            <div class="metric-bottom">
+                <span class="metric-desc" id="desc-aci">—</span>
+                <span class="status-badge" id="badge-aci">—</span>
             </div>
         </div>
     </div>
@@ -113,7 +147,7 @@
             </span>
             <div>
                 <span class="metric-value text-base" id="val-l10">--</span>
-                <span class="metric-unit">dB</span>
+                <span class="metric-unit">dBA</span>
             </div>
         </div>
         <div
@@ -133,7 +167,7 @@
             </span>
             <div>
                 <span class="metric-value text-base" id="val-l90">--</span>
-                <span class="metric-unit">dB</span>
+                <span class="metric-unit">dBA</span>
             </div>
         </div>
     </div>
