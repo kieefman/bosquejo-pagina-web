@@ -47,20 +47,26 @@ function loadAudio(audioUrl: string) {
         wavesurfer = null;
     }
 
+    // 1. Calcular altura: usar innerWidth porque offsetHeight da 0 cuando la pestaña de audio está oculta.
+    const spectroHeight = window.innerWidth >= 1280 ? 260 : 200;
+
     wavesurfer = WaveSurfer.create({
         container: "#waveform",
         height: 1, // Oculto — mínimo para que WaveSurfer no falle
         normalize: true,
+        sampleRate: 44100, // ⬅️ IMPORTANTE: Fuerza a Web Audio a usar 44.1kHz. Si tu Mac/OS usa 48kHz, el navegador hace upsampling y rellena con "cero energía" las frecuencias de 22kHz a 24kHz (creando el bloque vacío arriba).
         plugins: [
             Spectrogram.create({
                 container: "#spectrogram",
-                labels: false,
-                height: 200,
+                labels: true,
+                labelsColor: "#94a3b8",
+                labelsBackground: "transparent",
+                fftSamples: 512,
+                height: spectroHeight, // Ahora recibe 260 correctamente en desktop
                 splitChannels: false,
                 useWebWorker: true,
-                frequencyMin: 0,
-                frequencyMax: 4000,
-                scale: "mel",
+                frequencyMin: 20,
+                scale: "bark",
                 windowFunc: "hann",
                 gainDB: 20,
                 rangeDB: 80,

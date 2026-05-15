@@ -507,13 +507,6 @@ html, body {
 }
 #spectrogram { height: 200px; cursor: pointer; }
 
-/* Fuerza fondo negro en TODOS los elementos del plugin spectrogram/waveform.
-   El plugin crea divs wrapper + canvases dinámicamente, hay que cubrirlos todos. */
-#waveform *,
-#spectrogram * {
-    background: #000 !important;
-    display: block;
-}
 /* El cursor overlay SÍ debe mostrarse sobre el fondo negro */
 #spec-cursor {
     background-color: rgba(255, 255, 255, 0.85) !important;
@@ -564,3 +557,16 @@ html, body {
 }
 
 .map-hint.hidden { opacity: 0; }
+
+/* =============================================
+   Responsive – Desktop
+   ============================================= */
+@media (min-width: 1280px) {
+    #info-panel {
+        width: 560px;
+    }
+
+    #spectrogram {
+        height: 260px;
+    }
+}
