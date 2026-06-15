@@ -1,4 +1,4 @@
-import { classify, statusIcon, type Station, type Status } from "./utils";
+import { classify, statusIcon, type Station, type Status, BASE_URL } from "./utils";
 
 const panel = document.getElementById("info-panel");
 const closeBtn = document.getElementById("close-panel");
@@ -81,6 +81,20 @@ if (closeBtn && panel && mapHint) {
         const metricsTab = document.querySelector('[data-tab="metrics"]');
         if (metricsTab) {
             metricsTab.dispatchEvent(new Event("click"));
+        }
+
+        // Lógica de Foto
+        const photoEl = document.getElementById("station-photo") as HTMLImageElement;
+        const fallbackEl = document.getElementById("photo-fallback");
+        if (photoEl && fallbackEl) {
+            if (station.foto) {
+                photoEl.src = `${BASE_URL}${station.foto}`;
+                photoEl.style.display = "block";
+                fallbackEl.classList.add("hidden");
+            } else {
+                photoEl.style.display = "none";
+                fallbackEl.classList.remove("hidden");
+            }
         }
 
         // Mostrar panel

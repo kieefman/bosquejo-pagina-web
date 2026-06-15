@@ -1,0 +1,9 @@
+---
+// src/components/PhotoTab.astro
+---
+<div class="tab-panel" id="panel-photo" role="tabpanel" aria-labelledby="tab-photo">
+    <div class="photo-container" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+        <p id="photo-fallback" class="text-gray-500 text-sm hidden">No hay fotografía disponible para esta estación.</p>
+        <img id="station-photo" src="" alt="Fotografía de la estación" class="rounded-lg shadow-md max-w-full h-auto object-cover" style="max-height: 250px; display: none;" />
+    </div>
+</div>

@@ -7,6 +7,7 @@ export interface Station {
     coordenadas: [number, number];
     duracion_min: 1 | 10;
     audio: string;      // ruta al .wav, e.g. "/audios/P1Largo_260422_1670.wav"
+    foto: string | null; // ruta a la imagen, e.g. "/photos/P1Largo.jpg"
     laeq: number;   // LeqA ponderado A
     leqz: number;   // LeqZ ponderado Z (lineal)
     ndsi: number;   // Índice Paisaje Sonoro Natural

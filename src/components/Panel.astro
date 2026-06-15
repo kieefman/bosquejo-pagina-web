@@ -1,6 +1,7 @@
 ---
 import MetricsTab from "./MetricsTab.astro";
 import AudioTab from "./AudioTab.astro";
+import PhotoTab from "./PhotoTab.astro";
 ---
 <aside id="info-panel" aria-label="Información de estación">
     <!-- Cabecera -->
@@ -32,11 +33,21 @@ import AudioTab from "./AudioTab.astro";
         >
             🎧 Audio
         </button>
+        <button
+            class="tab-btn"
+            role="tab"
+            data-tab="photo"
+            aria-selected="false"
+            id="tab-photo"
+        >
+            📷 Foto
+        </button>
     </div>
 
     <!-- Tabs body (scrollable) -->
     <div class="tabs-body">
         <MetricsTab />
         <AudioTab />
+        <PhotoTab />
     </div>
 </aside>

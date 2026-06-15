@@ -61,7 +61,7 @@ function loadAudio(audioUrl: string) {
                 labels: true,
                 labelsColor: "#94a3b8",
                 labelsBackground: "transparent",
-                fftSamples: 512,
+                fftSamples: 256,
                 height: spectroHeight,
                 splitChannels: false,
                 useWebWorker: true,
