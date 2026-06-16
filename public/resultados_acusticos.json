@@ -3,248 +3,310 @@
     "filename": "P10Largo",
     "LeqA": 45.08,
     "LeqZ": 56.29,
-    "NDSI": -0.709,
+    "NDSI": -0.605,
     "L10": 46.77,
-    "L90": 38.63
+    "L90": 38.63,
+    "NDSI_fft": null,
+    "ACI": 3.9554115993E+7
   },
   {
     "filename": "P11Corto",
     "LeqA": 38.85,
     "LeqZ": 51.19,
-    "NDSI": -0.231,
+    "NDSI": -0.433,
     "L10": 41.62,
-    "L90": 33.35
+    "L90": 33.35,
+    "NDSI_fft": null,
+    "ACI": 3.37605686E+6
   },
   {
     "filename": "P12Corto",
     "LeqA": 38.9,
     "LeqZ": 54.02,
-    "NDSI": -0.412,
+    "NDSI": -0.187,
     "L10": 40.75,
-    "L90": 36.07
+    "L90": 36.07,
+    "NDSI_fft": null,
+    "ACI": 5.236560117E+6
   },
   {
     "filename": "P13Largo",
     "LeqA": 42.5,
     "LeqZ": 54.8,
-    "NDSI": -0.626,
+    "NDSI": -0.536,
     "L10": 43.13,
-    "L90": 38.05
+    "L90": 38.05,
+    "NDSI_fft": null,
+    "ACI": 3.6964761388E+7
   },
   {
     "filename": "P14Corto",
     "LeqA": 39.55,
     "LeqZ": 54.1,
-    "NDSI": -0.336,
+    "NDSI": -0.412,
     "L10": 39.73,
-    "L90": 36.18
+    "L90": 36.18,
+    "NDSI_fft": null,
+    "ACI": 3.923348926E+6
   },
   {
     "filename": "P15Largo",
     "LeqA": 52,
     "LeqZ": 63.89,
-    "NDSI": -0.835,
+    "NDSI": -0.78,
     "L10": 55.11,
-    "L90": 45.03
+    "L90": 45.03,
+    "NDSI_fft": null,
+    "ACI": 3.6875157428E+7
   },
   {
     "filename": "P16Corto",
     "LeqA": 40.87,
     "LeqZ": 54.9,
-    "NDSI": -0.749,
+    "NDSI": -0.647,
     "L10": 43.18,
-    "L90": 38.44
+    "L90": 38.44,
+    "NDSI_fft": null,
+    "ACI": 4.517391247E+6
   },
   {
     "filename": "P17Corto",
     "LeqA": 47.9,
     "LeqZ": 56.44,
-    "NDSI": -0.838,
+    "NDSI": -0.72,
     "L10": 50.75,
-    "L90": 42.81
+    "L90": 42.81,
+    "NDSI_fft": null,
+    "ACI": 5.555353956E+6
   },
   {
     "filename": "P18Largo",
     "LeqA": 48.17,
     "LeqZ": 59.51,
-    "NDSI": -0.51,
+    "NDSI": -0.441,
     "L10": 50.46,
-    "L90": 43.74
+    "L90": 43.74,
+    "NDSI_fft": null,
+    "ACI": 3.8804145522E+7
   },
   {
     "filename": "P19Largo",
     "LeqA": 37.1,
     "LeqZ": 55.56,
-    "NDSI": 0.514,
+    "NDSI": 0.773,
     "L10": 37.1,
-    "L90": 37.1
+    "L90": 37.1,
+    "NDSI_fft": null,
+    "ACI": 4.555628393E+7
   },
   {
     "filename": "P1Largo",
     "LeqA": 51.78,
     "LeqZ": 63.39,
-    "NDSI": -0.864,
+    "NDSI": -0.738,
     "L10": 54.2,
-    "L90": 47.97
+    "L90": 47.97,
+    "NDSI_fft": null,
+    "ACI": 4.3771142134E+7
   },
   {
     "filename": "P20Corto",
     "LeqA": 41.97,
     "LeqZ": 61,
-    "NDSI": -0.522,
+    "NDSI": -0.35,
     "L10": 41.97,
-    "L90": 41.97
+    "L90": 41.97,
+    "NDSI_fft": null,
+    "ACI": 3.575024315E+6
   },
   {
     "filename": "P21Largo",
     "LeqA": 39.45,
     "LeqZ": 53.3,
-    "NDSI": 0.202,
+    "NDSI": 0.571,
     "L10": 39.45,
-    "L90": 39.45
+    "L90": 39.45,
+    "NDSI_fft": null,
+    "ACI": 4.4707320451E+7
   },
   {
     "filename": "P22Corto",
     "LeqA": 43.62,
     "LeqZ": 61.17,
-    "NDSI": -0.095,
+    "NDSI": 0.253,
     "L10": 45.27,
-    "L90": 40.9
+    "L90": 40.9,
+    "NDSI_fft": null,
+    "ACI": 8.445287991E+6
   },
   {
     "filename": "P23Corto",
     "LeqA": 31.74,
     "LeqZ": 47.95,
-    "NDSI": -0.197,
+    "NDSI": 0.134,
     "L10": 31.74,
-    "L90": 31.74
+    "L90": 31.74,
+    "NDSI_fft": null,
+    "ACI": 4.438063805E+6
   },
   {
     "filename": "P24Corto",
     "LeqA": 34.06,
     "LeqZ": 57.92,
-    "NDSI": -0.447,
+    "NDSI": -0.11,
     "L10": 34.06,
-    "L90": 34.06
+    "L90": 34.06,
+    "NDSI_fft": null,
+    "ACI": 3.495035362E+6
   },
   {
     "filename": "P25Largo",
     "LeqA": 34.76,
     "LeqZ": 43.26,
-    "NDSI": 0.337,
+    "NDSI": 0.654,
     "L10": 34.76,
-    "L90": 34.76
+    "L90": 34.76,
+    "NDSI_fft": null,
+    "ACI": 3.9039160055E+7
   },
   {
     "filename": "P26Largo",
     "LeqA": 49.25,
     "LeqZ": 51.32,
-    "NDSI": 0.458,
+    "NDSI": 0.783,
     "L10": 49.25,
-    "L90": 49.25
+    "L90": 49.25,
+    "NDSI_fft": null,
+    "ACI": 5.1951023777E+7
   },
   {
     "filename": "P27Corto",
     "LeqA": 36.79,
     "LeqZ": 51.17,
-    "NDSI": -0.379,
+    "NDSI": -0.066,
     "L10": 36.79,
-    "L90": 36.79
+    "L90": 36.79,
+    "NDSI_fft": null,
+    "ACI": 3.374532799E+6
   },
   {
     "filename": "P28Corto",
     "LeqA": 36.95,
     "LeqZ": 53.55,
-    "NDSI": -0.735,
+    "NDSI": -0.399,
     "L10": 36.95,
-    "L90": 36.95
+    "L90": 36.95,
+    "NDSI_fft": null,
+    "ACI": 2.829260968E+6
   },
   {
     "filename": "P29Corto",
     "LeqA": 52.25,
     "LeqZ": 60.8,
-    "NDSI": -0.824,
+    "NDSI": -0.643,
     "L10": 52.25,
-    "L90": 52.25
+    "L90": 52.25,
+    "NDSI_fft": null,
+    "ACI": 3.698864016E+6
   },
   {
     "filename": "P2Corto",
     "LeqA": 48.71,
     "LeqZ": 59.56,
-    "NDSI": -0.921,
+    "NDSI": -0.841,
     "L10": 50.68,
-    "L90": 45.58
+    "L90": 45.58,
+    "NDSI_fft": null,
+    "ACI": 4.642263244E+6
   },
   {
     "filename": "P30Corto",
     "LeqA": 41.81,
     "LeqZ": 53.53,
-    "NDSI": 0.307,
+    "NDSI": 0.676,
     "L10": 41.81,
-    "L90": 41.81
+    "L90": 41.81,
+    "NDSI_fft": null,
+    "ACI": 2.854728401E+6
   },
   {
     "filename": "P31Corto",
     "LeqA": 45.2,
     "LeqZ": 55.08,
-    "NDSI": 0.003,
+    "NDSI": 0.428,
     "L10": 45.2,
-    "L90": 45.2
+    "L90": 45.2,
+    "NDSI_fft": null,
+    "ACI": 3.292985509E+6
   },
   {
     "filename": "P3Corto",
     "LeqA": 47.56,
     "LeqZ": 61.06,
-    "NDSI": -0.896,
+    "NDSI": -0.781,
     "L10": 49.47,
-    "L90": 44.5
+    "L90": 44.5,
+    "NDSI_fft": null,
+    "ACI": 5.461792787E+6
   },
   {
     "filename": "P4Corto",
     "LeqA": 40.15,
     "LeqZ": 55.46,
-    "NDSI": -0.684,
+    "NDSI": -0.496,
     "L10": 41.62,
-    "L90": 38.81
+    "L90": 38.81,
+    "NDSI_fft": null,
+    "ACI": 4.565164626E+6
   },
   {
     "filename": "P5Largo",
     "LeqA": 41.04,
     "LeqZ": 58.02,
-    "NDSI": -0.843,
+    "NDSI": -0.65,
     "L10": 42.44,
-    "L90": 39.31
+    "L90": 39.31,
+    "NDSI_fft": null,
+    "ACI": 3.6570304913E+7
   },
   {
     "filename": "P6Corto",
     "LeqA": 39.61,
     "LeqZ": 58.2,
-    "NDSI": -0.762,
+    "NDSI": -0.409,
     "L10": 41.01,
-    "L90": 38.14
+    "L90": 38.14,
+    "NDSI_fft": null,
+    "ACI": 5.879500096E+6
   },
   {
     "filename": "P7Corto",
     "LeqA": 42.39,
     "LeqZ": 56.54,
-    "NDSI": -0.779,
+    "NDSI": -0.67,
     "L10": 44.02,
-    "L90": 40.88
+    "L90": 40.88,
+    "NDSI_fft": null,
+    "ACI": 4.789372123E+6
   },
   {
     "filename": "P8Corto",
     "LeqA": 50.56,
     "LeqZ": 61.77,
-    "NDSI": -0.917,
+    "NDSI": -0.819,
     "L10": 52.45,
-    "L90": 46.58
+    "L90": 46.58,
+    "NDSI_fft": null,
+    "ACI": 7.097674277E+6
   },
   {
     "filename": "P9Corto",
     "LeqA": 54.71,
     "LeqZ": 68.72,
-    "NDSI": -0.798,
+    "NDSI": -0.593,
     "L10": 57.56,
-    "L90": 51.42
+    "L90": 51.42,
+    "NDSI_fft": null,
+    "ACI": 4.87700783E+6
   }
 ]
