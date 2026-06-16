@@ -72,7 +72,7 @@ async function cargarEstaciones(): Promise<void> {
                 if (ndsi > 0.3) return { fill: "#22c55e", border: "#14532d" }; // Verde (Mucha Biofonía)
                 if (ndsi < -0.3) return { fill: "#ef4444", border: "#7f1d1d" }; // Rojo (Mucha Antropofonía)
                 return { fill: "#eab308", border: "#713f12" }; // Amarillo (Mixto)
-            } 
+            }
             else if (param === "duracion_min") {
                 // Comportamiento original
                 return {
@@ -87,7 +87,7 @@ async function cargarEstaciones(): Promise<void> {
         // Colocar marcadores con colores dinámicos
         estaciones.forEach((station) => {
             const colors = getMarkerColor(station, colorParameter);
-            
+
             const marker = L.circleMarker(station.coordenadas, {
                 radius: 9,
                 fillColor: colors.fill,
@@ -133,7 +133,8 @@ function initMap() {
     const container = document.getElementById("map-container");
     if (!container) return;
 
-    map = L.map("map-container").setView([-39.845, -73.228], 14);
+    //map = L.map("map-container").setView([-39.845, -73.228], 14);
+    map = L.map("map-container").setView([-39.86, -73.25], 14);
 
     // 1. Definir la capa de OpenStreetMap
     const osmLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
