@@ -7,7 +7,7 @@ const mapHint = document.getElementById("map-hint");
 // ─── Portal: mueve los tooltip-box al <body> para escapar de overflow/transform ──
 document.querySelectorAll<HTMLElement>(".tooltip-wrap").forEach((wrap) => {
     const trigger = wrap.querySelector<HTMLElement>(".tooltip-trigger");
-    const box     = wrap.querySelector<HTMLElement>(".tooltip-box");
+    const box = wrap.querySelector<HTMLElement>(".tooltip-box");
     if (!trigger || !box) return;
 
     // Mueve el box al body (fuera de cualquier contenedor clipeado)
@@ -17,17 +17,17 @@ document.querySelectorAll<HTMLElement>(".tooltip-wrap").forEach((wrap) => {
         const r = trigger.getBoundingClientRect();
         // Mostrar invisible para medir altura real
         box.style.visibility = "hidden";
-        box.style.display    = "block";
+        box.style.display = "block";
         const bh = box.offsetHeight;
         const bw = box.offsetWidth;
         // Centrar horizontalmente sobre el trigger, aparecer encima
         let left = r.left + r.width / 2 - bw / 2;
-        let top  = r.top - bh - 10;
+        let top = r.top - bh - 10;
         // Evitar que salga por los bordes de la pantalla
         left = Math.max(8, Math.min(left, window.innerWidth - bw - 8));
-        top  = Math.max(8, top);
-        box.style.left       = `${left}px`;
-        box.style.top        = `${top}px`;
+        top = Math.max(8, top);
+        box.style.left = `${left}px`;
+        box.style.top = `${top}px`;
         box.style.visibility = "visible";
     });
 
@@ -65,12 +65,12 @@ if (closeBtn && panel && mapHint) {
 
         // Cabecera
         (document.getElementById("station-name") as HTMLElement).textContent = station.nombre;
-        (document.getElementById("station-coords") as HTMLElement).textContent = 
+        (document.getElementById("station-coords") as HTMLElement).textContent =
             `${station.coordenadas[0].toFixed(4)}°S, ${station.coordenadas[1].toFixed(4)}°O`;
 
         // Métricas simples (valor directo)
-        (document.getElementById("val-l10")  as HTMLElement).textContent = String(station.l10);
-        (document.getElementById("val-l90")  as HTMLElement).textContent = String(station.l90);
+        (document.getElementById("val-l10") as HTMLElement).textContent = String(station.l10);
+        (document.getElementById("val-l90") as HTMLElement).textContent = String(station.l90);
         (document.getElementById("val-leqz") as HTMLElement).textContent = String(station.leqz);
 
         // Métricas con clasificación
