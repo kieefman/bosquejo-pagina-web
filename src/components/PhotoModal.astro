@@ -3,19 +3,20 @@
 ---
 
 <div id="photo-modal" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 hidden opacity-0 transition-opacity duration-300" style="backdrop-filter: blur(4px);">
-    <button id="close-photo-modal" class="absolute top-4 right-4 text-white hover:text-gray-300 z-[10000] p-2 bg-black/50 rounded-full" aria-label="Cerrar modal">
+    <button id="close-photo-modal" class="absolute top-6 right-6 md:top-4 md:right-4 text-white hover:text-gray-300 z-[10000] p-3 md:p-2 bg-black/50 rounded-full shadow-lg" aria-label="Cerrar modal">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
     </button>
     
-    <div id="modal-photo-wrapper" class="relative w-full h-full flex items-center justify-center overflow-hidden cursor-grab">
-        <img id="modal-photo" src="" alt="Fotografía ampliada" class="max-w-full max-h-full object-contain pointer-events-auto" />
+    <!-- Contenedor a pantalla completa -->
+    <div id="modal-photo-wrapper" class="relative w-full h-full flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing">
+        <img id="modal-photo" src="" alt="Fotografía ampliada" class="max-w-full max-h-[85vh] object-contain pointer-events-auto block" />
     </div>
 
-    <div class="absolute bottom-6 left-0 right-0 text-center text-white/60 text-sm pointer-events-none flex items-center justify-center gap-2">
-        <span>🖱️</span>
-        <span>Rueda para zoom, arrastra para mover</span>
+    <div class="absolute bottom-8 md:bottom-6 left-0 right-0 text-center text-white/80 text-sm pointer-events-none flex flex-col items-center justify-center gap-1">
+        <span class="hidden md:inline">🖱️ Rueda para zoom, arrastra para mover</span>
+        <span class="inline md:hidden">👆 Pellizca para zoom, arrastra para mover</span>
     </div>
 </div>

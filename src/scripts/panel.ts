@@ -155,8 +155,39 @@ setTimeout(() => {
     if (modalPhoto) {
         panzoomInstance = Panzoom(modalPhoto, {
             maxScale: 5,
-            contain: 'outside',
-            step: 0.3
+            minScale: 1,
+            step: 0.3,
+            setTransform: (elem: HTMLElement, { scale, x, y }: any) => {
+                const imgW = elem.offsetWidth;
+                const imgH = elem.offsetHeight;
+                const winW = window.innerWidth;
+                const winH = window.innerHeight;
+                
+                // Calculamos cuánto de la imagen se "desborda" de la pantalla.
+                // Si la imagen (incluso con zoom) es más pequeña que la pantalla, el valor será 0 y no se podrá mover en ese eje.
+                // Solo permitirá arrastrar cuando el tamaño de la imagen supere el tamaño de la pantalla.
+                const boundX = Math.max(0, (imgW * scale - winW) / 2);
+                const boundY = Math.max(0, (imgH * scale - winH) / 2);
+                
+                // Panzoom pasa x e y en pixeles sin escalar, así que dividimos los límites
+                const maxUnscaledX = boundX / scale;
+                const maxUnscaledY = boundY / scale;
+                
+                const clampedX = Math.max(-maxUnscaledX, Math.min(maxUnscaledX, x));
+                const clampedY = Math.max(-maxUnscaledY, Math.min(maxUnscaledY, y));
+                
+                elem.style.transform = `scale(${scale}) translate(${clampedX}px, ${clampedY}px)`;
+                
+                // Si Panzoom intentó ir más allá del límite, sincronizamos su estado interno
+                // para que la imagen no se sienta "atascada" al intentar devolverla.
+                if (x !== clampedX || y !== clampedY) {
+                    requestAnimationFrame(() => {
+                        if (panzoomInstance) {
+                            panzoomInstance.pan(clampedX, clampedY);
+                        }
+                    });
+                }
+            }
         });
         const modalPhotoWrapper = document.getElementById("modal-photo-wrapper");
         if (modalPhotoWrapper) {
@@ -216,7 +247,37 @@ if (photoModal) {
 
 // Cerrar con la tecla Escape
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && photoModal && !photoModal.classList.contains("hidden")) {
-        closeModal();
+    if (e.key === "Escape") {
+        const isModalOpen = photoModal && !photoModal.classList.contains("hidden");
+        if (isModalOpen) {
+            closeModal();
+        } else if (panel && panel.classList.contains("visible")) {
+            panel.classList.remove("visible");
+            const mapHint = document.getElementById("map-hint");
+            if (mapHint) mapHint.classList.remove("hidden");
+            window.dispatchEvent(new CustomEvent("audio-pause"));
+        }
+    }
+});
+
+// Cerrar panel de información al hacer clic fuera de él (en celulares o escritorio)
+document.addEventListener("click", (e) => {
+    if (panel && panel.classList.contains("visible")) {
+        const target = e.target as HTMLElement;
+        const isModalOpen = photoModal && !photoModal.classList.contains("hidden");
+        
+        // No cerrar si el modal de foto está abierto
+        if (isModalOpen) return;
+        
+        // Si el clic no fue dentro del panel
+        if (!panel.contains(target)) {
+            // Y no fue en un marcador (que se usa para abrir el panel) ni en un control del mapa
+            if (!target.closest(".leaflet-interactive") && !target.closest(".leaflet-control")) {
+                panel.classList.remove("visible");
+                const mapHint = document.getElementById("map-hint");
+                if (mapHint) mapHint.classList.remove("hidden");
+                window.dispatchEvent(new CustomEvent("audio-pause"));
+            }
+        }
     }
 });
