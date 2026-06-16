@@ -1,4 +1,8 @@
 import { classify, statusIcon, type Station, type Status, BASE_URL } from "./utils";
+// @ts-ignore
+import Panzoom from "https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.es.js";
+
+let panzoomInstance: any = null;
 
 const panel = document.getElementById("info-panel");
 const closeBtn = document.getElementById("close-panel");
@@ -85,14 +89,20 @@ if (closeBtn && panel && mapHint) {
 
         // Lógica de Foto
         const photoEl = document.getElementById("station-photo") as HTMLImageElement;
+        const photoWrapperEl = document.getElementById("photo-wrapper");
+        const photoHintEl = document.getElementById("photo-hint");
         const fallbackEl = document.getElementById("photo-fallback");
-        if (photoEl && fallbackEl) {
+        if (photoEl && photoWrapperEl && fallbackEl && photoHintEl) {
             if (station.foto) {
                 photoEl.src = `${BASE_URL}${station.foto}`;
-                photoEl.style.display = "block";
+                photoWrapperEl.style.display = "block";
+                photoHintEl.style.display = "block";
                 fallbackEl.classList.add("hidden");
+                
+                // No reiniciar zoom aquí, se hace al cerrar el modal
             } else {
-                photoEl.style.display = "none";
+                photoWrapperEl.style.display = "none";
+                photoHintEl.style.display = "none";
                 fallbackEl.classList.remove("hidden");
             }
         }
@@ -135,3 +145,78 @@ function setMetric(key: string, value: number, result: { status: Status; label: 
     cardEl.className = cardEl.className.replace(/status-(good|mod|bad)/g, "").trim() + ` status-${result.status}`;
     iconEl.textContent = statusIcon[result.status];
 }
+
+// ─── Lógica del Modal de Fotografías Panorámicas ─────────────
+const photoModal = document.getElementById("photo-modal");
+const closePhotoModal = document.getElementById("close-photo-modal");
+const modalPhoto = document.getElementById("modal-photo") as HTMLImageElement;
+
+setTimeout(() => {
+    if (modalPhoto) {
+        panzoomInstance = Panzoom(modalPhoto, {
+            maxScale: 5,
+            contain: 'outside',
+            step: 0.3
+        });
+        const modalPhotoWrapper = document.getElementById("modal-photo-wrapper");
+        if (modalPhotoWrapper) {
+            modalPhotoWrapper.addEventListener('wheel', (event: WheelEvent) => {
+                if (!panzoomInstance) return;
+                // Prevenir scroll de la página mientras se hace zoom
+                event.preventDefault(); 
+                panzoomInstance.zoomWithWheel(event);
+            }, { passive: false });
+        }
+    }
+}, 500);
+
+// Abrir Modal
+const openModal = () => {
+    const photoEl = document.getElementById("station-photo") as HTMLImageElement;
+    if (photoEl && photoEl.src && photoModal && modalPhoto) {
+        modalPhoto.src = photoEl.src;
+        photoModal.classList.remove("hidden");
+        // Forzar reflow
+        void photoModal.offsetWidth;
+        photoModal.classList.remove("opacity-0");
+        photoModal.classList.add("opacity-100");
+    }
+};
+
+const photoElGlobal = document.getElementById("station-photo");
+const photoHintGlobal = document.getElementById("photo-hint");
+if (photoElGlobal) photoElGlobal.addEventListener("click", openModal);
+if (photoHintGlobal) photoHintGlobal.addEventListener("click", openModal);
+
+// Cerrar Modal
+const closeModal = () => {
+    if (photoModal) {
+        photoModal.classList.remove("opacity-100");
+        photoModal.classList.add("opacity-0");
+        setTimeout(() => {
+            photoModal.classList.add("hidden");
+            if (panzoomInstance) {
+                panzoomInstance.reset({ animate: false });
+            }
+        }, 300); // Coincidir con la transición
+    }
+};
+
+if (closePhotoModal) {
+    closePhotoModal.addEventListener("click", closeModal);
+}
+// Cerrar haciendo clic afuera
+if (photoModal) {
+    photoModal.addEventListener("click", (e) => {
+        if (e.target === photoModal || e.target === document.getElementById("modal-photo-wrapper")) {
+            closeModal();
+        }
+    });
+}
+
+// Cerrar con la tecla Escape
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && photoModal && !photoModal.classList.contains("hidden")) {
+        closeModal();
+    }
+});

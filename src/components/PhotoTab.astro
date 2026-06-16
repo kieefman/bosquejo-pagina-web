@@ -10,7 +10,7 @@
 >
     <div
         class="photo-container"
-        style="display: flex; flex-direction: column; gap: 10px; align-items: center;"
+        style="display: flex; flex-direction: column; gap: 10px; align-items: center; position: relative;"
     >
         <p
             id="photo-fallback"
@@ -18,12 +18,19 @@
         >
             No hay fotografía disponible para este punto.
         </p>
-        <img
-            id="station-photo"
-            src=""
-            alt="Fotografía de la estación"
-            class="rounded-lg shadow-md max-w-full h-auto object-cover"
-            style="max-height: 250px; display: none;"
-        />
+        <p id="photo-hint" class="text-xs text-gray-400 italic text-center mt-2 cursor-pointer hover:text-white transition-colors" style="display: none; width: 100%;">
+            🔍 Haz clic en la foto para ampliar a pantalla completa
+        </p>
+        <div id="photo-wrapper" style="overflow: hidden; width: 100%; border-radius: 0.5rem; display: none;">
+            <img
+                id="station-photo"
+                src=""
+                alt="Fotografía de la estación"
+                class="shadow-md max-w-full h-auto object-cover"
+                style="max-height: 250px; cursor: zoom-in; transition: transform 0.2s; hover:scale-105;"
+                onmouseover="this.style.transform='scale(1.03)'"
+                onmouseout="this.style.transform='scale(1)'"
+            />
+        </div>
     </div>
 </div>
