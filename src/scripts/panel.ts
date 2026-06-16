@@ -97,6 +97,20 @@ if (closeBtn && panel && mapHint) {
             }
         }
 
+        // Lógica de Notas
+        const notesEl = document.getElementById("station-notes") as HTMLElement;
+        const notesFallbackEl = document.getElementById("notes-fallback");
+        if (notesEl && notesFallbackEl) {
+            if (station.notas) {
+                notesEl.textContent = station.notas;
+                notesEl.style.display = "block";
+                notesFallbackEl.classList.add("hidden");
+            } else {
+                notesEl.style.display = "none";
+                notesFallbackEl.classList.remove("hidden");
+            }
+        }
+
         // Mostrar panel
         panel.classList.add("visible");
         mapHint.classList.add("hidden");

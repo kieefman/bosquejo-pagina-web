@@ -1,3 +1,16 @@
 {
-  "P1Largo": "/photos/ejemplo.png"
+  "P1Largo": "/photos/P1Largo.jpeg",
+  "P2Corto": "/photos/P2Corto.jpeg",
+  "P3Corto": "/photos/P3Corto.jpeg",
+  "P4Corto": "/photos/P4Corto.jpeg",
+  "P5Largo": "/photos/P5Largo.jpeg",
+  "P6Corto": "/photos/P6Corto.jpeg",
+  "P7Corto": "/photos/P7Corto.jpeg",
+  "P8Corto": "/photos/P8Corto.jpeg",
+  "P9Corto": "/photos/P9Corto.jpeg",
+  "P10Largo": "/photos/P10Largo.jpeg",
+  "P11Corto": "/photos/P11Corto.jpeg",
+  "P12Corto": "/photos/P12Corto.jpeg",
+  "P13Largo": "/photos/P13Largo.jpeg",
+  "P14Corto": "/photos/P14Corto.jpeg"
 }

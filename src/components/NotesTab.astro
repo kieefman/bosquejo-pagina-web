@@ -1,0 +1,28 @@
+---
+// src/components/NotesTab.astro
+---
+
+<div
+    class="tab-panel"
+    id="panel-notes"
+    role="tabpanel"
+    aria-labelledby="tab-notes"
+>
+    <div
+        class="notes-container"
+        style="display: flex; flex-direction: column; gap: 10px; padding: 10px;"
+    >
+        <p
+            id="station-notes"
+            class="text-gray-400 text-m hidden italic"
+            style="display: none; white-space: pre-wrap; line-height: 1.5;"
+        >
+        </p>
+        <p
+            id="notes-fallback"
+            class="text-gray-400 text-sm hidden italic text-center"
+        >
+            No hay notas registradas para este punto.
+        </p>
+    </div>
+</div>

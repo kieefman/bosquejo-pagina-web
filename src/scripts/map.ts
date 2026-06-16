@@ -12,17 +12,19 @@ function normalizarNombre(csvName: string): string {
 
 async function cargarEstaciones(): Promise<void> {
     try {
-        const [jsonRes, csvRes, audioRes, photoRes] = await Promise.all([
+        const [jsonRes, csvRes, audioRes, photoRes, notesRes] = await Promise.all([
             fetch(`${BASE_URL}/resultados_acusticos.json`),
             fetch(`${BASE_URL}/coords.csv`),
             fetch(`${BASE_URL}/audios_index.json`),
             fetch(`${BASE_URL}/photos_index.json`),
+            fetch(`${BASE_URL}/notas_index.json`),
         ]);
 
         const resultados: any[] = await jsonRes.json();
         const csvText: string = await csvRes.text();
         const audioIndex: Record<string, string> = await audioRes.json();
         const photoIndex: Record<string, string> = await photoRes.json().catch(() => ({})); // En caso de que no exista aún
+        const notesIndex: Record<string, string> = await notesRes.json().catch(() => ({})); // En caso de que no exista aún
 
         // Parsear CSV → mapa filename → [lat, lng]
         const lineas = csvText.trim().split("\n").slice(1); // saltar header X,Y,Name
@@ -44,6 +46,7 @@ async function cargarEstaciones(): Promise<void> {
                 duracion_min: (r.filename.includes("Largo") ? 10 : 1) as 1 | 10,
                 audio: audioIndex[r.filename] ?? "",
                 foto: photoIndex[r.filename] ?? null,
+                notas: notesIndex[r.filename] ?? null,
                 // Renombrar a los IDs que usa el panel HTML
                 laeq: r.LeqA,
                 leqz: r.LeqZ,
